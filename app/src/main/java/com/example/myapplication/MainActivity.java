@@ -26,12 +26,12 @@ public class MainActivity extends AppCompatActivity {
         buttonGmail = findViewById(R.id.gmailButton);
         buttonScreen = findViewById(R.id.screenButton);
 
-        buttonGmail.setOnClickListener(v -> sendEmail());
+        buttonGmail.setOnClickListener(v -> Gmail());
 
-        buttonScreen.setOnClickListener(v -> goToScreen2());
+        buttonScreen.setOnClickListener(v -> Screen());
     }
 
-    private void sendEmail() {
+    private void Gmail() {
         String emailBody = editText.getText().toString();
 
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(Intent.createChooser(emailIntent, "письмо"));
     }
 
-    private void goToScreen2() {
+    private void Screen() {
         Intent intent = new Intent(this, MainActivity2.class);
         startActivity(intent);
     }
